@@ -22,3 +22,11 @@ class Group {
         this.restaurants = restaurants;
     }
 }
+class Recipes {
+    constructor(name,ingredients, time, image) {
+        this.name = name;
+        this.ingredients = ingredients;
+        this.time=time;
+        this.image=image;
+    }
+}
