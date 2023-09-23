@@ -23,10 +23,11 @@ class Group {
     }
 }
 class Recipes {
-    constructor(name,ingredients, time, image) {
+    constructor(name, ingredients, intstructions, time, image) {
         this.name = name;
         this.ingredients = ingredients;
         this.time=time;
         this.image=image;
+        this.instructions = instructions;
     }
 }
