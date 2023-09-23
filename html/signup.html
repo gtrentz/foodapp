@@ -13,25 +13,21 @@
     <img src = "images/Asian.JPG" style = "max-width: 10%;">
     <h1>Get Started With Your Free Account!</h1>
     <h4>Create a free Food App account to choose your food in a fun fashion! Input your name, a username, and a password.</h4>
-    <form action="/signup" method="post" id="form">
-        <div>
-        <label for="username">Username: </label>
-        <input type="text" id="username" name="username">
-    </div>
-    <div>
-        <label for="password">Password: </label>
-        <input type="password" id="password" name="password">
-    </div>
-        <div>
-        <label for="Name">Name: </label>
-        <input type="text" id="name" name="name">
-    </div>
-    <div>
-        <label for="Email"> Email: </label>
-        <input type = "text" id = "email" name = "email" >
-    </div>
-        <input type="submit" id="submit" name="Signup" value="Submit" onclick="addNewUser()">
-      </form>
+    <form action="/signup" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+    
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        
+        
+        <input type="submit" id="submit" name="Signup" value="Submit">
       
       <script>
         function addNewUser() {
