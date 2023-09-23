@@ -31,11 +31,11 @@ const likeButton = document.getElementById('likeButton');
 const dislikeButton = document.getElementById('dislikeButton');
 
 likeButton.addEventListener('click', () => {
-  likedList.push(restaurant);
+  likedList.push(document.getElementById('restaurantName'));
   updateLikedList();
 });
 
 dislikeButton.addEventListener('click', () => {
-  dislikedList.push(restaurant);
+  dislikedList.push(document.getElementById('restaurantName'));
   updateDislikedList();
 });
