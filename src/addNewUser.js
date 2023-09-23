@@ -6,14 +6,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-function addNewUser() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-  
-    // Send form data to server using HTTP POST request
-    // ...
-  }
+
 
 app.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;
