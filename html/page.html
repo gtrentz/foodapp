@@ -24,36 +24,44 @@
         </nav>
         <hr>
         <div style = "position:relative; left:640px;">
-        <button id = "Recipes"> Recipes </button> <button id = "Resturants"> Resturants </button>
+        <button id = "Recipes"> Recipes </button> <button id = "Restaurants"> Restaurants </button>
         </div>
-        <p style="text-align:center"><h1>Resturants</h1></p>
+        <p style="text-align:center"><h1>Restaurants</h1></p>
     </header>
     <section>
-        <script src="https://use.fontawesome.com/fe459689b4.js"></script>
-        <h4 class="restaurantName">Pullman Bar & Diner</h4>
-            <img src = "images/Pullman.png">
-            <button class="btn" id="likeButton"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-            <button class="btn" id="dislikeButton"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        <h4 id="restaurantName">The Dandy Lion</h4>
-            <img src = "images/Dandy.jpeg">
-            <button class="btn" id="likeButton"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-            <button class="btn" id="dislikeButton"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        <h4 id="restaurantName">Encounter</h4>
-            <img src = "images/Encounter.jpeg">
-            <button class="btn" id="likeButton"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-            <button class="btn" id="dislikeButton"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        <h4 id="restaurantName">Webster</h4>
-            <img src = "images/webster.jpeg">
-            <button class="btn" id="likeButton"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-            <button class="btn" id="dislikeButton"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        <h4 id="restaurantName">Orchard Green</h4>
-            <img src = "images/Orchard Green.jpeg">
-            <button class="btn" id="likeButton"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-            <button class="btn" id="dislikeButton"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        <h5> Likes: </h5>
-        <ul id="likedList"></ul>
-        <h5> Dislikes: </h5>
-        <ul id="dislikedList"></ul>
+        <div id="restaurantList">
+        <p style="text-align:center"><h1>Restaurants</h1>
+            <ul id="restaurants">
+                <h4 class="restaurantName">Pullman Bar & Diner</h4>
+                  <img src = "images/Pullman.png">
+                  <button class="likeButton">Like</button>
+                  <button class="dislikeButton">Dislike</button>
+                <h4 class="restaurantName">The Dandy Lion</h4>
+                  <img src = "images/Dandy.jpeg">
+                  <button class="likeButton">Like</button>
+                  <button class="dislikeButton">Dislike</button>
+                <h4 class="restaurantName">Encounter</h4>
+                  <img src = "images/Encounter.jpeg">
+                  <button class="likeButton">Like</button>
+                  <button class="dislikeButton">Dislike</button>
+                <h4 class="restaurantName">Webster</h4>
+                  <img src = "images/webster.jpeg">
+                  <button class="likeButton">Like</button>
+                  <button class="dislikeButton">Dislike</button>
+                <h4 class="restaurantName">Orchard Green</h4>
+                  <img src = "images/Orchard Green.jpeg">
+                  <button class="likeButton">Like</button>
+                  <button class="dislikeButton">Dislike</button>
+              </ul>
+        </div>
+        <div id="likedList">
+            <h5> Likes: </h5>
+            <ul id="likedRestaurants"></ul>
+        </div>
+        <div id="dislikedList">
+            <h5> Dislikes: </h5>
+            <ul id="dislikedRestaurants"></ul>
+        </div>
     </section>
 <script src="home.js">  </script>
 </body>
