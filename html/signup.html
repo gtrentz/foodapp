@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
 </head>
-<body>
+<body style="background-color:rgb(253, 243, 202);">
     <a href = "page.html"> 
         <img src = "images/home button.png" style = "max-width: 5%;">
     </a>
@@ -31,29 +31,47 @@
       
       <script>
         function addNewUser() {
-        var user = document.getElementById("username").value;
-        var pass = document.getElementById("password").value;  
-        var name = document.getElementById("name").value;
-
-
-        var connection = new ActiveXObject("ADODB.Connection");
-
-        var connectionstring="Data Source=<server>;Initial Catalog=<catalog>;User ID=<gtrentz>;Password=<Augu$t2003!>;Provider=SQLOLEDB";
-
-        connection.Open(connectionstring);
-        var rs = new ActiveXObject("ADODB.Recordset");
-
-        rs.Open("SELECT * FROM users", connection);
-        rs.MoveFirst
-        while(!rs.eof)
-        {
-        document.write(rs.fields(1));
-        rs.movenext;
+            // Requiring modules
+const express = require('express');
+const app = express();
+const mssql = require("mysql");
+ 
+// Get request
+app.get('/', function (req, res) {
+ 
+    // Config your database credential
+    const config = {
+        user: 'SA',
+        password: 'Your_Password',
+        server: 'localhost',
+        database: 'geek'
+    };
+ 
+    // Connect to your database
+    mssql.connect(config, function (err) {
+ 
+        // Create Request object to perform
+        // query operation
+        let request = new mssql.Request();
+ 
+        // Query to the database and get the records
+        request.query('select * from student',
+            function (err, records) {
+ 
+                if (err) console.log(err)
+ 
+                // Send records as a response
+                // to browser
+                res.send(records);
+ 
+            });
+    });
+});
+ 
+let server = app.listen(5000, function () {
+    console.log('Server is listening at port 5000...');
+});
         }
-
-        rs.close;
-        connection.close; 
-    }
       </script>
     
 </body>
