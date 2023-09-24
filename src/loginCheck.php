@@ -16,8 +16,8 @@ foreach ($userlines as $line) {
 }
 if ($validLogin) {
     // Successful login, redirect to a welcome page or perform necessary actions
-    header("Location: welcome.php");
-    exit();
+    echo "Login successful";
+    //exit();
 } else {
     // Invalid login, display an error message or redirect to a login error page
     echo "Invalid username or password. <a href='http://127.0.0.1:5500/html/login.html'>Try again</a>";
