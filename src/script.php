@@ -29,9 +29,7 @@ $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$ema
 
 if ($conn->query($sql) === TRUE) {
     if (mysqli_affected_rows($conn) > 0) {
-        echo '<p>Signup Successful!</p>';
-        echo '<p>Click the link below:</p>';
-        echo '<a href="' . $dynamicURL . '">Home page</a>';
+        echo '<p>Signup Successful! <a href="http://127.0.0.1:5500/html/loggedin.html">Home page</a></p>';
     } else {
         echo "Error: Data not inserted into database";
     }

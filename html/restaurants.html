@@ -8,6 +8,97 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<script>
+  class User {
+    constructor(name, email, password) {
+      this.name = name;
+      this.email = email;
+      this.password = password;
+      this.groups = [];
+      this.likes = [];
+    }
+
+    join(group) {
+      this.groups.push(group);
+      group.add(this);
+    }
+
+    leave(group) {
+      this.groups = this.groups.filter(g => g !== group);
+      group.remove(this);
+    }
+
+    like(restaurant) {
+      this.likes.push(restaurant);
+    }
+
+    getUserLikes() {
+      return this.likes;
+    }
+  }
+
+  class Group {
+    constructor(name) {
+      this.name = name;
+      this.users = [];
+      this.likes = [];
+    }
+
+    add(user) {
+      this.users.push(user);
+    }
+
+    remove(user) {
+      this.users = this.users.filter(u => u !== user);
+    }
+
+    findCommonLikedRestaurants() {
+    if (this.users.length === 0) {
+        return [];
+    }
+
+    const commonLikedRestaurants = [];
+    for (let i = 0; i < restaurants.length; i++) {
+        let allLiked = true;
+        for (const user of users) {
+            if (!user.preferences[i]) {
+                allLiked = false;
+                break;
+            }
+        }
+        if (allLiked) {
+            commonLikedRestaurants.push(restaurants[i]);
+        }
+    }
+
+    return commonLikedRestaurants;
+}
+  }
+
+  class Restaurant {
+    constructor(name, description, imageSrc) {
+      this.name = name;
+      this.description = description;
+      this.imageSrc = imageSrc;
+    }
+  }
+
+  class Recipe {
+    constructor(name, description, imageSrc, ingredients, amounts) {
+      /** Match elements of ingredients and amounts arrays accordingly
+       * when you initialize **/
+      this.name = name;
+      this.description = description;
+      this.imageSrc = imageSrc;
+      this.ingredients = ingredients;
+      this.amounts = amounts;
+    }
+  }
+
+  let current = new User
+</script>
+  
 </head>
   <header>
     <!-- Navbar Section-->
@@ -60,6 +151,15 @@
         </div>
     </section>
     <script>
+
+      function addRestaurant(restaurant) {
+        restaurants.add({
+          name: restaurant.name,
+          imageSrc: restaurant.imageSrc,
+          description: restaurant.description,
+        });
+
+      }
         // Sample restaurant data
         const restaurants = [
             {
@@ -106,6 +206,7 @@
         document.getElementById("nay").addEventListener("click", () => {
             currentRestaurantIndex = (currentRestaurantIndex + 1) % restaurants.length;
             updateRestaurant();
+
         });
 
         document.getElementById("yay").addEventListener("click", () => {
