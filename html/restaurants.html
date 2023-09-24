@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>Restaurants</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,21 +44,29 @@
         </div>
       </nav>
   </header>
+    <body>
+
     <section>
         <!-- Restaurant container -->
-        <div class="restaurant-container">
+        <body>
+            <div class="restaurant-container">
+                <div id="restaurant-card">
+                    <h2 id="restaurant-name"></h2>
+                    <img id="restaurant-image" src="">
+                    <p id="restaurant-cuisine"></p>
+                    <p id="restaurant-description"></p>
+                    <div class="restaurant-switch-buttons" id="buttons">
+                        <button id="dislike-button">Dislike</button>
+                        <button id="like-button">Like</button>
+                    </div>
+                </div>
+                <p id="finished-message" style="display: none;">You've rated all the restaurants!</p>
+            </div>
+        
+        <!--
             <script src="resturants.js" class="center"></script>
             <script src="https://use.fontawesome.com/fe459689b4.js"></script>
-            <h4 id="restaurant-name"></h4>
-            <p id = "restaurant-description"></p>
-            <img id="restaurant-image" src="">
-        </div>
-        <!-- Buttons to switch between restaurants -->
-        <div class="restaurant-switch-buttons">
-            <button id="yay">yay</button>
-            <button id="nay">nay</button>
-        </div>
-    </section>
+        -->
     <script>
         // Sample restaurant data
         const restaurants = [
@@ -66,55 +74,93 @@
                 name: "Pullman Bar & Diner",
                 imageSrc: "images/Pullman.png",
                 description: "Refurbished diner offering traditional comfort fare with a twist, plus craft cocktails & beers.",
+                cuisine: "American, Bar"
             },
             {
                 name: "The Dandy Lion",
                 imageSrc: "images/Dandy.jpeg",
                 description: "Breakfast, sandwiches & salads served in a casual luncheonette featuring exposed-brick walls.",
+                cuisine: "Breakfast, Brunch, American"
             },
             {
                 name: "Encounter Cafe",
                 imageSrc: "images/Encounter.jpeg",
                 description: "Cafe with only fresh ingredients",
+                cuisine: "Breakfast, Brunch, Tea/Coffee"
             },
             {
                 name: "The Webster",
                 imageSrc: "images/webster.jpeg",
                 description: "The upscale restaurant that features seasonal American dishes and a menu from owner Sam Gelman, made the list representing Iowa.",
+                cuisine: "Cocktail Bar, Small Plates, American"
             },
             {
                 name: "Orchard Green",
                 imageSrc: "images/Orchard Green.jpeg",
                 description: "Seasonal American dishes with Mediterranean influences in a sleek, dark-wood dining room.",
+                cuisine: "American, Seafood"
             },
         ];
 
         let currentRestaurantIndex = 0;
 
+        const restaurantName = document.getElementById("restaurant-name");
+        const restaurantCuisine = document.getElementById("restaurant-cuisine");
+        const restaurantDescription = document.getElementById("restaurant-description");
+        const dislikeButton = document.getElementById("dislike-button");
+        const likeButton = document.getElementById("like-button");
+        const finishedMessage = document.getElementById("finished-message");
+
+        function showRestaurant(index) {
+            if (index < restaurants.length) {
+                const restaurant = restaurants[index];
+                restaurantName.textContent = restaurant.name;
+                restaurantCuisine.textContent = `Cuisine: ${restaurant.cuisine}`;
+                restaurantDescription.textContent = restaurant.description;
+            } else {
+                finishedMessage.style.display = "block";
+                document.getElementById("restaurantCard").style.display = "none";
+            }
+        }
+
+        showRestaurant(currentIndex);
+
+        dislikeButton.addEventListener("click", () => {
+            currentIndex++;
+            showRestaurant(currentIndex);
+        });
+
+        likeButton.addEventListener("click", () => {
+            currentIndex++;
+            showRestaurant(currentIndex);
+        });
+        
+
         // Function to update the displayed restaurant
         function updateRestaurant() {
             const restaurant = restaurants[currentRestaurantIndex];
-            document.getElementById("restaurant-name").textContent = restaurant.name;
-            document.getElementById("restaurant-image").src = restaurant.imageSrc;
-            document.getElementById("restaurant-description").textContent = restaurant.description;
+            document.getElementById("restaurantName").textContent = restaurant.name;
+            document.getElementById("restaurantImage").src = restaurant.imageSrc;
+            document.getElementById("restaurantDescription").textContent = restaurant.description;
         }
 
         // Initialize the first restaurant
         updateRestaurant();
 
         // Event listeners for next and previous buttons
-        document.getElementById("nay").addEventListener("click", () => {
+        document.getElementById("dislikeButton").addEventListener("click", () => {
             currentRestaurantIndex = (currentRestaurantIndex + 1) % restaurants.length;
             updateRestaurant();
         });
 
-        document.getElementById("yay").addEventListener("click", () => {
+        document.getElementById("likeButton").addEventListener("click", () => {
             currentRestaurantIndex = (currentRestaurantIndex - 1 + restaurants.length) % restaurants.length;
             updateRestaurant();
-        });
+        }); 
     </script>
-
-    <script>
+        </body>
+    </section>
+    <script> /*
 document.getElementById("nay").addEventListener("click", () => {
     // Send a POST request to the Flask route with the user's action
     sendUserAction('nay');
@@ -145,6 +191,7 @@ function sendUserAction(action) {
         // Handle network errors if needed
     });
 }
-    </script>
-</body>
+   */
+   </script>
+    </body>
 </html>
