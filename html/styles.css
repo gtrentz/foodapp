@@ -123,8 +123,7 @@
 
 .mainContent h1 {
   font-size: 4rem;
-  background-color: #cd9278ff;
-  background-image: linear-gradient(to top, #cd946d 0%, #cd957c 100% );
+  background-color: white;
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -132,3 +131,12 @@
   -moz-text-fill-color: transparent;
 }
 
+.mainContent h2 {
+  font-size: 2rem;
+  background-color: white;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
