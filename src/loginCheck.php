@@ -7,6 +7,7 @@ $userlines = file("users.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 // Loop through the lines to find a match
 $validLogin = false;
+
 foreach ($userlines as $line) {
     list($storedUsername, $storedPassword) = explode(':', $line); // Use ':' as delimiter
     if ($username === $storedUsername && $password === $storedPassword) { // Check for a match
@@ -14,10 +15,11 @@ foreach ($userlines as $line) {
         break; // Match found, exit the loop
     }
 }
+
 if ($validLogin) {
     // Successful login, redirect to a welcome page or perform necessary actions
     echo "Login successful";
-    echo "<a href='http://127.0.0.1:5500/html/index.html'>Home page</a>";
+    echo "<a href='http://127.0.0.1:5500/html/loggedin.html'>Home page</a>";
     //exit();
 } else {
     // Invalid login, display an error message or redirect to a login error page
