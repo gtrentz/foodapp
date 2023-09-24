@@ -54,16 +54,23 @@
 
         <hr>
 
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br> <!-- Changed 'name' attribute to 
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" placeholder="Enter Username" required><br>
+        <!-- Changed 'name' attribute to 
         
         'username' -->
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br> <!-- Changed 'type' to 'password' -->
-       
-        <br>
-        <input type="submit" id="submit" name="Submit" value="Submit">
-        <p><a href="signup.html">Don't have an account? Sign Up!</a>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter Password" required><br>
+        <!-- Changed 'type' to 'password' -->
+        <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px">Remember Me
+        </label><br>
+
+        <div class="clearfix">
+            <button type="submit" class="signupBtn">Sign Up</button>
+        </div>
+    
+        <p><a href="/">Forgot Password?</a>
     </form>
   </body>
 </html>
