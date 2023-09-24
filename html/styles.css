@@ -1,3 +1,4 @@
+/* Navbar */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -99,4 +100,9 @@
 .navbarLinks:hover {
   color: #cd9278ff;
   transition: all 0.3s ease;
+}
+
+/* Section */
+.main {
+  background-color: #9cdcfeff;
 }
