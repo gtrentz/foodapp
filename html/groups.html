@@ -41,3 +41,44 @@
         </div>
       </nav>
   </header>
+  <body>
+    <header>
+        <!-- Navbar Section -->
+        <!-- ... (your navigation bar) ... -->
+    </header>
+    <section>
+      <h1>Groups</h1>
+      <ul id="group-list">
+          <!-- Group data will be inserted here -->
+      </ul>
+  </section>
+  <script>
+      // Fetch data from the Python script on XAMPP
+      fetch('http://localhost/htdocs/groupupdate.py')
+          .then(response => response.json())
+          .then(data => {
+              // Process and display the data in your HTML
+              const groupList = document.getElementById('group-list');
+              data.groups.forEach(group => {
+                  const listItem = document.createElement('li');
+                  listItem.innerHTML = `
+                      <h2>${group.group_name}</h2>
+                      <p>Members: ${group.members.join(', ')}</p>
+                      <p>Restaurant Preferences:</p>
+                      <ul>
+                          ${group.restaurant_preferences.map(pref => `
+                              <li>
+                                  <strong>${pref.restaurant}</strong>: ${pref.preferences.join(', ')}
+                              </li>
+                          `).join('')}
+                      </ul>
+                  `;
+                  groupList.appendChild(listItem);
+              });
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+          });
+  </script>
+</body>
+</html>
