@@ -41,13 +41,9 @@
     </header>
 
     <hr>
-    <div style="position:relative; left:650px;">
-        <button id="prev-recipe" class = "button2">Previous</button>
-        <button id="next-recipe" class = "button2">Next</button>
-    </div>
-    <h1>Recipes:</h1>
-
-    <div class="myDiv">
+    <h1>Recipes</h1>
+    <div class = "myDiv">
+        <span class="borderexample">
         <h3>Name: Tuna Noodle Casserole</h3>
         <h4>Time: 20 Mins</h4>
         <img src = "images/Tuna.png" style = "max-width: 20%;">
@@ -69,7 +65,9 @@
             <br>
             4. Mix bread crumbs with melted butter in a bowl; sprinkle over tuna casserole and continue to bake until bread crumbs are golden brown and crispy, 5 minutes more.
         </p>
+    </span>
     </div>
+
     <div class="myDiv">
         <h3>Name: Nuoc Mam</h3>
         <h4>Time: 5 Mins</h4>
@@ -90,6 +88,10 @@
         </p>
     </div>
     <!-- Add more recipe containers as needed -->
+   <!-- <div style="position:relative; left:650px;"> -->
+        <button id="prev-recipe" class = "button2">Previous</button>
+        <button id="next-recipe" class = "button3">Next</button>
+    <!-- </div> -->
 
     <script>
         const recipeContainers = document.querySelectorAll(".myDiv");

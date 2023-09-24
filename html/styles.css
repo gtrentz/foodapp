@@ -260,14 +260,27 @@ box-shadow: 0 5px 10px black;
 margin: auto;
 }
 
+.restaurant-container {
+  text-align: center;
+  border-radius: 5px;
+}
+
+#restaurant-image {
+  height: 80%;
+  width: 80%;
+  border-radius: 10%;
+}
+
+/* Recipes css */
 .button2 {
+  position:relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: 5px 10  px;
-  height: 90%;
-  width: 20%;
+  padding: 3px 8  px;
+  height: 25 px;
+  width: 15%;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -275,12 +288,34 @@ margin: auto;
   color: black;
 }
 
-.restaurant-container {
-  text-align: center;
+.button3 {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 3px 8  px;
+  height: 25 px;
+  width: 15%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #9cdcfeff;
+  color: black;
 }
 
-#restaurant-image {
-  height: 80%;
-  width: 80%;
-  border: 50%;
+.myDiv{
+  font-family:sans-serif;
+  color: black;
+  line-height: 20px;
+  text-align: center; 
+  justify-self: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-width:3px;
+  border-style:solid;
+  border-color:black;
+  height: 85%;
+  width: 900px;
+  justify-content: center;
 }
