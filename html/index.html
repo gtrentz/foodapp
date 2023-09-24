@@ -1,68 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-  <body>
-    <!-- Navbar Section-->
-    <nav class="navbar">
-      <div class="navbarContainer">
-        <a href="index.html" id="navbarLogo"><img src='images/icon.png' height="75px">Food Finder</a>
-        <!-- if can mobile ver 
-        <div class="navbarToggle" id="mobileMenu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div> 
-        -->
-        <ul class="navbarMenu">
-          <li class="navbarItem">
-            <a href="index.html" class="navbarLinks">Home</a>
-          </li>
-          <li class="navbarItem">
-            <a href="restaurants.html" class="navbarLinks">Restaurants</a>
-          </li>
-          <li class="navbarItem">
-            <a href="recipes.html" class="navbarLinks">Recipes</a>
-          </li>
-          <li class="navbarBtn">
-            <a href="signup.html" class="button">Join</a>
-          </li>
-          <li class="navbarBtn">
-            <a href="login.html" class="button">Login</a>
-          </li>
-        </ul>
-     </div>
-    </nav>
+<style>
+    .myDiv {
+      border: 2px outset black;
+      background-color: white;
+      display: none; 
+    }
+</style>
+<body style="background-color:rgb(253, 243, 202);">
+    <header><nav class="navbar">
+        <div class="navbarContainer">
+          <a href="index.html" id="navbarLogo"><img src='images/icon.png' height="75px">Food App</a>
+          <div class="navbarToggle" id="mobileMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="navbarMenu">
+            <li class="navbarItem">
+              <a href="index.html" class="navbarLinks">Home</a>
+            </li>
+            <li class="navbarItem">
+              <a href="restaurants.html" class="navbarLinks">Restaurants</a>
+            </li>
+            <li class="navbarItem">
+              <a href="recipes.html" class="navbarLinks">Recipes</a>
+            </li>
+            <li class="navbarBtn">
+              <a href="signup.html" class="button">Join</a>
+            </li>
+            <li class="navbarBtn">
+              <a href="login.html" class="button">Login</a>
+            </header>
 
-     <!-- Restaurant Section-->
-     <div class="main">
-      <div class="mainContainer">
-        <div class="mainContent">
-          <h1>Restaurants</h1>
-          <button class="mainBtn"><a href="restaurants.html">Find Restaurants</a></button>
-        </div>
-        <div class="mainImgContainer">
-          <img src="images/restaurants.svg" alt="man thinking about hamburger" id="mainImg">
-        </div>
-      </div>
+    <hr>
+    <div style="position:relative; left:650px;">
+        <button id="prev-recipe">Previous</button>
+        <button id="next-recipe">Next</button>
     </div>
-    
-    <!-- Recipes Section-->
-    <div class="main">
-      <div class="mainContainer">
-        <div class="mainContent">
-          <h1>Recipes</h1>
-          <button class="mainBtn"><a href="recipes.html"button>Find Recipes</a></button>
-        </div>
-        <div class="mainImgContainer">
-          <img src="images/recipes.svg" alt="two people cooking" id="mainImg">
-        </div>
-      </div>
-    </div>
+    <h1>Recipes:</h1>
 
-  </body>
+    <div class="myDiv">
+        <h3>Name: Nuoc Mam</h3>
+            <h4>Time: 5 Mins</h4>
+            <img src = "images/nuoc.jpg" style = "max-width: 10%;"> <button id = "No"> No </button> <button id = "Yes"> Yes </button>
+            <h4> Ingredients:</h4>
+            <li>6 tbsp water</li>
+            <li>2 tbsp sugar</li>
+            <li>1.5 tbsp freshly squeezed lime or lemon juice</li>
+            <li>2 tbsp fish sauce</li>
+            <li>1 clove garlic</li>
+            <h4>Instructions: </h4>
+            <p> 
+            1. Combine water and sugar in a bowl. Optional: heat 1/3 of the water<br>
+            2. Mix in to make dissolving the sugar easier, then add the rest of the water. <br>
+            3. Add lime or lemon juice in increments until you like how it tastes. <br>
+            4. Add fish sauce in small increments until you like how it tastes. <br>
+            5. Top with garlic and chilies then serve.
+            </p>
+    </div>
+    <div class="myDiv">
+        <h3>Name: Tuna Noodle Casserole</h3>
+        <h4>Time: 20 Mins</h4>
+        <img src = "images/Tuna.png" style = "max-width: 10%;"> <button id = "No"> No </button> <button id = "Yes"> Yes </button>
+        <h4> Ingredients:</h4>
+        <li> 4 cups hot cooked medium egg noodles  </li> 
+        <li>2 (10.5 ounce) cans Campbell's® Condensed Cream of Mushroom Soup</li> 
+        <li>2 (10 ounce) cans tuna, drained</li>
+        <li>2 cups frozen peas</li>
+        <li>1 cup milk</li>
+        <li>2 tablespoons dry bread crumbs</li>
+        <li>1 tablespoon butter, melted</li>
+        <h4>Instructions: </h4>
+        <p> 
+            1. Preheat the oven to 400 degrees F (200 degrees C).
+            <br>
+            2. Stir cooked noodles, condensed soup, tuna, peas, and milk in a 3-quart casserole.
+            <br>
+            3. Bake in the preheated oven until hot, about 30 minutes; stir well.
+            <br>
+            4. Mix bread crumbs with melted butter in a bowl; sprinkle over tuna casserole and continue to bake until bread crumbs are golden brown and crispy, 5 minutes more.
+        </p>
+    </div>
+    <!-- Add more recipe containers as needed -->
+
+    <script>
+        const recipeContainers = document.querySelectorAll(".myDiv");
+        let currentRecipeIndex = 0;
+
+        // Function to show the currently selected recipe and hide others
+        function showRecipe(index) {
+            recipeContainers.forEach((container, i) => {
+                if (i === index) {
+                    container.style.display = "block";
+                } else {
+                    container.style.display = "none";
+                }
+            });
+        }
+
+        // Initialize with the first recipe shown
+        showRecipe(currentRecipeIndex);
+
+        // Event listener for the "Next" button
+        document.getElementById("next-recipe").addEventListener("click", () => {
+            currentRecipeIndex = (currentRecipeIndex + 1) % recipeContainers.length;
+            showRecipe(currentRecipeIndex);
+        });
+
+        // Event listener for the "Previous" button
+        document.getElementById("prev-recipe").addEventListener("click", () => {
+            currentRecipeIndex = (currentRecipeIndex - 1 + recipeContainers.length) % recipeContainers.length;
+            showRecipe(currentRecipeIndex);
+        });
+    </script>
+</body>
 </html>
