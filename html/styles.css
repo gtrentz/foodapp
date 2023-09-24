@@ -102,7 +102,7 @@
   transition: all 0.3s ease;
 }
 
-/* Section */
+/* Main Section */
 .main {
   background-color: #9cdcfeff;
 }
@@ -187,3 +187,5 @@
   height: 80%;
   width: 80%;
 }
+
+/* Login/Sign Up Section */

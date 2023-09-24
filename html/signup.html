@@ -44,11 +44,15 @@
         </div>
       </nav>
   </header>
-    <hr>
-    <img src = "images/Asian.JPG" style = "max-width: 10%;">
+  
+  <!--Sign Up Form
     <h1>Get Started With Your Free Account!</h1>
     <h4>Create a free Food App account to choose your food in a fun fashion! Input your name, a username, and a password.</h4>
-    <form action="http://localhost/userstxt.php." method="post">
+  -->
+    <form action="http://localhost/userstxt.php." method="post" style="border: 1px solid #ccc">
+      <div class="formContainer">
+        <h1>Sign Up for a Free Account</h1>
+        <p>Please fill out all fields to create an account</p>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username"><br>
     
@@ -63,9 +67,9 @@
         
         
         <input type="submit" id="submit" name="Signup" value="Submit" >
-        
-        </form>
-      <script>
+      </div>
+    </form>
+<script>
         function addNewUser() {
             // Requiring modules
 const express = require('express');
@@ -108,7 +112,7 @@ let server = app.listen(5000, function () {
     console.log('Server is listening at port 5000...');
 });
         }
-      </script>
+</script>
     
 </body>
 </html>
