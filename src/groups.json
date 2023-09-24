@@ -1,0 +1,17 @@
+{
+    "group1": {
+        "members": ["user1", "user2", "user3"],
+        "restaurant_preferences": {
+            "restaurant1": ["dislike", "like", "like"],
+            "restaurant2": ["like", "dislike", "like"],
+            "restaurant3": ["like", "like", "dislike"]
+        }
+    },
+    "group2": {
+        "members": ["user4", "user5"],
+        "restaurant_preferences": {
+            "restaurant1": ["like", "like"],
+            "restaurant2": ["like", "dislike"]
+        }
+    }
+}
