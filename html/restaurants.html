@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -136,38 +136,36 @@
       </nav>
   </header>
     <body>
-
+    
     <section>
-        <!-- Restaurant container -->
-        <body>
+        <section>
+            <!-- Restaurant container -->
             <div class="restaurant-container">
-                <div id="restaurant-card">
-                    <h2 id="restaurant-name"></h2>
-                    <img id="restaurant-image" src="">
-                    <p id="restaurant-cuisine"></p>
-                    <p id="restaurant-description"></p>
-                    <div class="restaurant-switch-buttons" id="buttons">
-                        <button id="dislike-button">Dislike</button>
-                        <button id="like-button">Like</button>
-                    </div>
-                </div>
-                <p id="finished-message" style="display: none;">You've rated all the restaurants!</p>
+                <script src="resturants.js" class="center"></script>
+                <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+                <h4 id="restaurant-name"></h4>
+                <p id="restaurant-description"></p>
+                <p id="restaurant-cuisine"></p>
+                <img id="restaurant-image" src="">
             </div>
+            
+            <div class="restaurantLikeButtons">
+                <button id="likeBtn">Like</button>
+                <button id="dislikeBtn">Dislike</button>
+            </div>
+        </section>
+        <script>
+    
+            function addRestaurant(restaurant) {
+                restaurants.add({
+                    name: restaurant.name,
+                    imageSrc: restaurant.imageSrc,
+                    description: restaurant.description,
+                    cuisine: restaurant.cuisine,
+            });
+    
+          }
         
-        <!--
-            <script src="resturants.js" class="center"></script>
-            <script src="https://use.fontawesome.com/fe459689b4.js"></script>
-        -->
-    <script>
-
-      function addRestaurant(restaurant) {
-        restaurants.add({
-          name: restaurant.name,
-          imageSrc: restaurant.imageSrc,
-          description: restaurant.description,
-        });
-
-      }
         // Sample restaurant data
         const restaurants = [
             {
@@ -202,66 +200,33 @@
             },
         ];
 
-        let currentRestaurantIndex = 0;
-
-        const restaurantName = document.getElementById("restaurant-name");
-        const restaurantCuisine = document.getElementById("restaurant-cuisine");
-        const restaurantDescription = document.getElementById("restaurant-description");
-        const dislikeButton = document.getElementById("dislike-button");
-        const likeButton = document.getElementById("like-button");
-        const finishedMessage = document.getElementById("finished-message");
-
-        function showRestaurant(index) {
-            if (index < restaurants.length) {
-                const restaurant = restaurants[index];
-                restaurantName.textContent = restaurant.name;
-                restaurantCuisine.textContent = `Cuisine: ${restaurant.cuisine}`;
-                restaurantDescription.textContent = restaurant.description;
-            } else {
-                finishedMessage.style.display = "block";
-                document.getElementById("restaurantCard").style.display = "none";
-            }
-        }
-
-        showRestaurant(currentIndex);
-
-        dislikeButton.addEventListener("click", () => {
-            currentIndex++;
-            showRestaurant(currentIndex);
-        });
-
-        likeButton.addEventListener("click", () => {
-            currentIndex++;
-            showRestaurant(currentIndex);
-        });
-        
+         let currentRestaurantIndex = 0;
 
         // Function to update the displayed restaurant
         function updateRestaurant() {
             const restaurant = restaurants[currentRestaurantIndex];
-            document.getElementById("restaurantName").textContent = restaurant.name;
-            document.getElementById("restaurantImage").src = restaurant.imageSrc;
-            document.getElementById("restaurantDescription").textContent = restaurant.description;
+            document.getElementById("restaurant-name").textContent = restaurant.name;
+            document.getElementById("restaurant-image").src = restaurant.imageSrc;
+            document.getElementById("restaurant-description").textContent = restaurant.description;
         }
 
         // Initialize the first restaurant
         updateRestaurant();
 
         // Event listeners for next and previous buttons
-        document.getElementById("dislikeButton").addEventListener("click", () => {
+        document.getElementById("likeBtn").addEventListener("click", () => {
             currentRestaurantIndex = (currentRestaurantIndex + 1) % restaurants.length;
             updateRestaurant();
 
         });
 
-        document.getElementById("likeButton").addEventListener("click", () => {
-            currentRestaurantIndex = (currentRestaurantIndex - 1 + restaurants.length) % restaurants.length;
+        document.getElementById("dislikeBtn").addEventListener("click", () => {
+            currentRestaurantIndex = (currentRestaurantIndex + 1) % restaurants.length;
             updateRestaurant();
-        }); 
-    </script>
-        </body>
-    </section>
-    <script> /*
+        });
+        </script>
+
+    <script>
 document.getElementById("nay").addEventListener("click", () => {
     // Send a POST request to the Flask route with the user's action
     sendUserAction('nay');
@@ -292,7 +257,6 @@ function sendUserAction(action) {
         // Handle network errors if needed
     });
 }
-   */
-   </script>
-    </body>
+    </script>
+</body>
 </html>
