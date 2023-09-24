@@ -249,3 +249,18 @@ button:hover {
 }
 
 /*restaurant css*/
+
+.button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 5px 10  px;
+  height: 90%;
+  width: 20%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #9cdcfeff;
+  color: black;
+}
