@@ -6,31 +6,32 @@
     <title>Food App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color:rgb(253, 243, 202);">
+<body style="background-color:white;">
     <header>
-        <nav>
-            <u1>
-                <img src = "images/home button.png" style = "max-width: 5%;">
-            <div style = "position:relative; left:1300px;">
-                <a href="signup.html">
-                <button id = "Signup"> Sign Up </button>
-                </a>
-                <a href="login.html">
-                <button id = "Login"> Login </button>
-                </a>
-
-            </div>
-            </u1>
-        </nav>
-        <hr>
-        <div style = "position:relative; left:640px;">
-            <a href = "recipes.html">
-        <button id = "Recipes"> Recipes </button>
-    </a>
-    <button id = "Resturants"> Restaurants </button>
-        </div>
-        <p style="text-align:center"><h1>Restaurants</h1></p>
-    </header>
+        <nav class="navbar">
+            <div class="navbarContainer">
+              <a href="index.html" id="navbarLogo">Food App</a>
+              <div class="navbarToggle" id="mobileMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+              <ul class="navbarMenu">
+                <li class="navbarItem">
+                  <a href="index.html" class="navbarLinks">Home</a>
+                </li>
+                <li class="navbarItem">
+                  <a href="restaurants.html" class="navbarLinks">Restaurants</a>
+                </li>
+                <li class="navbarItem">
+                  <a href="recipes.html" class="navbarLinks">Recipes</a>
+                </li>
+                <li class="navbarBtn">
+                  <a href="signup.html" class="button">Sign Up</a>
+                </li>
+                <li class="navbarBtn">
+                  <a href="login.html" class="button">Login</a>
+                </header>
     <section>
         <div id="restaurantList">
         <p style="text-align:center"><h1>Restaurants</h1>
