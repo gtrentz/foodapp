@@ -35,14 +35,14 @@
     <hr>
     <h1> Welcome </h1>
     <h3>Sign in to Food App or <a href="signup.html">Create an Account</a></h3>
-    <form>
+    <form method="POST" action="http://localhost/loginCheck.php">
         <label for="username">Username:</label><br>
-        <input type="text" id="email" name="email"><br>
+        <input type="text" id="username" name="username" required><br> <!-- Changed 'name' attribute to 'username' -->
         <label for="password">Password:</label><br>
-        <input type="text" id="password" name="password">
+        <input type="password" id="password" name="password" required><br> <!-- Changed 'type' to 'password' -->
         <br>
         <input type="submit" id="submit" name="Submit" value="Submit">
-        <a href="htp://127.0.0.1:5500/html/signup.html">Sign Up</a>
-      </form>
-</body>t
+        <a href="signup.html">Sign Up</a>
+    </form>
+</body>
 </html>
