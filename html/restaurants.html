@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurants</title>
+    <title>Food App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color:white;">
+<body style="background-color:rgb(253, 243, 202);">
     <header>
         <nav class="navbar">
             <div class="navbarContainer">
@@ -33,40 +33,66 @@
                   <a href="login.html" class="button">Login</a>
                 </header>
     <section>
-        <div id="restaurantList">
-        <p style="text-align:center"><h1>Restaurants</h1>
-            <ul id="restaurants">
-                <h4 class="restaurantName">Pullman Bar & Diner</h4>
-                  <img src = "images/Pullman.png">
-                  <button class="likeButton">Like</button>
-                  <button class="dislikeButton">Dislike</button>
-                <h4 class="restaurantName">The Dandy Lion</h4>
-                  <img src = "images/Dandy.jpeg">
-                  <button class="likeButton">Like</button>
-                  <button class="dislikeButton">Dislike</button>
-                <h4 class="restaurantName">Encounter</h4>
-                  <img src = "images/Encounter.jpeg">
-                  <button class="likeButton">Like</button>
-                  <button class="dislikeButton">Dislike</button>
-                <h4 class="restaurantName">Webster</h4>
-                  <img src = "images/webster.jpeg">
-                  <button class="likeButton">Like</button>
-                  <button class="dislikeButton">Dislike</button>
-                <h4 class="restaurantName">Orchard Green</h4>
-                  <img src = "images/Orchard Green.jpeg">
-                  <button class="likeButton">Like</button>
-                  <button class="dislikeButton">Dislike</button>
-              </ul>
+        <!-- Restaurant container -->
+        <div class="restaurant-container">
+            <script src="resturants.js" class="center"></script>
+            <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+            <h4 id="restaurant-name"></h4>
+            <img id="restaurant-image" src="">
         </div>
-        <div id="likedList">
-            <h5> Likes: </h5>
-            <ul id="likedRestaurants"></ul>
+        <!-- Buttons to switch between restaurants -->
+        <div class="restaurant-switch-buttons">
+            <button id="yay">yay</button>
+            <button id="nay">nay</button>
         </div>
-        <div id="dislikedList">
-            <h5> Dislikes: </h5>
-            <ul id="dislikedRestaurants"></ul>
-        </div>
-        <script src="home.js"></script>
     </section>
+    <script>
+        // Sample restaurant data
+        const restaurants = [
+            {
+                name: "Pullman Bar & Diner",
+                imageSrc: "images/Pullman.png",
+            },
+            {
+                name: "The Dandy Lion",
+                imageSrc: "images/Dandy.jpeg",
+            },
+            {
+                name: "Encounter",
+                imageSrc: "images/Encounter.jpeg",
+            },
+            {
+                name: "Webster",
+                imageSrc: "images/webster.jpeg",
+            },
+            {
+                name: "Orchard Green",
+                imageSrc: "images/Orchard Green.jpeg",
+            },
+        ];
+
+        let currentRestaurantIndex = 0;
+
+        // Function to update the displayed restaurant
+        function updateRestaurant() {
+            const restaurant = restaurants[currentRestaurantIndex];
+            document.getElementById("restaurant-name").textContent = restaurant.name;
+            document.getElementById("restaurant-image").src = restaurant.imageSrc;
+        }
+
+        // Initialize the first restaurant
+        updateRestaurant();
+
+        // Event listeners for next and previous buttons
+        document.getElementById("nay").addEventListener("click", () => {
+            currentRestaurantIndex = (currentRestaurantIndex + 1) % restaurants.length;
+            updateRestaurant();
+        });
+
+        document.getElementById("yay").addEventListener("click", () => {
+            currentRestaurantIndex = (currentRestaurantIndex - 1 + restaurants.length) % restaurants.length;
+            updateRestaurant();
+        });
+    </script>
 </body>
 </html>
