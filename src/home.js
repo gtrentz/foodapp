@@ -2,6 +2,8 @@
 let likedRestaurants = [];
 let dislikedRestaurants = [];
 
+
+
 //function to update the liked list on the webpage
 function updateLikedRestaurants() {
   const likedRestaurantsList = document.getElementById('likedRestaurants');
