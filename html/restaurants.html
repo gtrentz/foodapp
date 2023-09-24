@@ -38,6 +38,7 @@
             <script src="resturants.js" class="center"></script>
             <script src="https://use.fontawesome.com/fe459689b4.js"></script>
             <h4 id="restaurant-name"></h4>
+            <p id = "restaurant-description"></p>
             <img id="restaurant-image" src="">
         </div>
         <!-- Buttons to switch between restaurants -->
@@ -52,22 +53,27 @@
             {
                 name: "Pullman Bar & Diner",
                 imageSrc: "images/Pullman.png",
+                description: "Refurbished diner offering traditional comfort fare with a twist, plus craft cocktails & beers.",
             },
             {
                 name: "The Dandy Lion",
                 imageSrc: "images/Dandy.jpeg",
+                description: "Breakfast, sandwiches & salads served in a casual luncheonette featuring exposed-brick walls.",
             },
             {
-                name: "Encounter",
+                name: "Encounter Cafe",
                 imageSrc: "images/Encounter.jpeg",
+                description: "Cafe with only fresh ingredients",
             },
             {
-                name: "Webster",
+                name: "The Webster",
                 imageSrc: "images/webster.jpeg",
+                description: "The upscale restaurant that features seasonal American dishes and a menu from owner Sam Gelman, made the list representing Iowa.",
             },
             {
                 name: "Orchard Green",
                 imageSrc: "images/Orchard Green.jpeg",
+                description: "Seasonal American dishes with Mediterranean influences in a sleek, dark-wood dining room.",
             },
         ];
 
@@ -78,6 +84,7 @@
             const restaurant = restaurants[currentRestaurantIndex];
             document.getElementById("restaurant-name").textContent = restaurant.name;
             document.getElementById("restaurant-image").src = restaurant.imageSrc;
+            document.getElementById("restaurant-description").textContent = restaurant.description;
         }
 
         // Initialize the first restaurant
