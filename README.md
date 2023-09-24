@@ -1,6 +1,6 @@
-# UIOWA 23 Hackathon - Food Finder #
+# IOWA 23 Hackathon - Food Finder
 
-![Project Logo](images/logo.png)
+<img src="html/images/Logo.png" alt="Logo" width="200"/>
 
 ## Table of Contents
 - [Introduction](#introduction)
