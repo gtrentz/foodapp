@@ -250,14 +250,24 @@ button:hover {
 
 /*restaurant css*/
 .restaurant-container {
-position: relative;
-max-width: 430px;
-width: 100%;
-background: white;
-padding: 34px;
-border-radius: 6px;
-box-shadow: 0 5px 10px black;
-margin: auto;
+  color: black;
+  line-height: 20px;
+  text-align: left; 
+  padding-left: 2%;
+  padding-right: 2%;
+  border-width:3px;
+  border-style:solid;
+  border-color:black;
+  height: 100%;
+  max-width: 900px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  background: white;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px black;
+  margin: auto;
 }
 
 .restaurant-container {
@@ -266,8 +276,8 @@ margin: auto;
 }
 
 #restaurant-image {
-  height: 80%;
-  width: 80%;
+  height: 50%;
+  width: 50%;
   border-radius: 10%;
 }
 
@@ -284,9 +294,10 @@ margin: auto;
   border: none;
   outline: none;
   border-radius: 5px;
-  background: #9cdcfeff;
+  background: red;
   color: black;
   float: left;
+  margin: auto;
 }
 
 .button3 {
@@ -301,13 +312,13 @@ margin: auto;
   border: none;
   outline: none;
   border-radius: 5px;
-  background: #9cdcfeff;
+  background: red;
   color: black;
   float: right;
+  margin: auto;
 }
 
 .myDiv{
-  font-family:sans-serif;
   color: black;
   line-height: 20px;
   text-align: left; 
@@ -317,8 +328,13 @@ margin: auto;
   border-style:solid;
   border-color:black;
   height: 100%;
-  width: 900px;
+  max-width: 900px;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  width: 100%;
+  background: white;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px black;
+  margin: auto;
 }
