@@ -1,81 +1,45 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
 import mysql.connector
 
 app = Flask(__name__)
 
-# Configure MySQL database connection
-db = mysql.connector.connect(
-    host="your_servername",
-    user="your_username",
-    password="your_password",
-    database="your_database_name"
-)
+# MySQL database configuration
+db_config = {
+    'host': 'Grant-Dell',
+    'port': 3306,
+    'user': 'root',
+    'password': 'Augu$t2003!',
+    'database': 'users'
+}
 
-@app.route('/')
-def signup_form():
-    return render_template('signup.html')
-
-@app.route('/process_form', methods=['POST'])
-def process_form():
+@app.route('/signup', methods=['POST'])
+def signup():
+    # Retrieve form data
     name = request.form['name']
     email = request.form['email']
+    username = request.form['username']
     password = request.form['password']
 
-    cursor = db.cursor()
+    # Connect to the MySQL database
+    conn = mysql.connector.connect(**db_config)
+    cursor = conn.cursor()
 
-    # Insert data into MySQL database
-    insert_query = "INSERT INTO users (name, email, password) VALUES (%s, %s, %s)"
-    values = (name, email, password)
+    # Define the SQL query for inserting data
+    insert_query = "INSERT INTO users (name, email, username, password) VALUES (%s, %s, %s, %s)"
+    data = (name, email, username, password)
 
-    try:
-        cursor.execute(insert_query, values)
-        db.commit()
-        return "Sign-up successful!"
-    except Exception as e:
-        db.rollback()
-        return f"Error: {e}"
+    # Execute the SQL query
+    cursor.execute(insert_query, data)
 
+    # Commit the changes to the database
+    conn.commit()
+
+    # Close the cursor and connection
     cursor.close()
+    conn.close()
+
+    return "Signup successful!"
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
-import mysql.connector
-
-app = Flask(__name__)
-
-# Configure MySQL database connection
-db = mysql.connector.connect(
-    host="your_servername",
-    user="your_username",
-    password="your_password",
-    database="your_database_name"
-)
-
-@app.route('/')
-def signup_form():
-    return render_template('signup.html')
-
-@app.route('/process_form', methods=['POST'])
-def process_form():
-    name = request.form['name']
-    email = request.form['email']
-    password = request.form['password']
-
-    cursor = db.cursor()
-
-    # Insert data into MySQL database
-    insert_query = "INSERT INTO users (name, email, password) VALUES (%s, %s, %s)"
-    values = (name, email, password)
-
-    try:
-        cursor.execute(insert_query, values)
-        db.commit()
-        return "Sign-up successful!"
-    except Exception as e:
-        db.rollback()
-        return f"Error: {e}"
-
-    cursor.close()
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

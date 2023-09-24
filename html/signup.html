@@ -7,73 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body style="background-color:rgb(253, 243, 202);">
-    <a href = "page.html"> 
+    <a href = "restaurants.html"> 
         <img src = "images/home button.png" style = "max-width: 5%;">
     </a>
     <hr>
     <img src = "images/Asian.JPG" style = "max-width: 10%;">
     <h1>Get Started With Your Free Account!</h1>
     <h4>Create a free Food App account to choose your food in a fun fashion! Input your name, a username, and a password.</h4>
-    <form action="/signup" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
+    <form action="script.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
     
         <label for="email">Email:</label>
         <input type="email" id="email" name="email"><br>
     
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br>
-
         <label for="password">Password:</label>
         <input type="password" id="password" name="password"><br>
-        
-        
-        <input type="submit" id="submit" name="Signup" value="Submit" onclick="addNewUser()">
-      
-      <script>
-        function addNewUser() {
-            // Requiring modules
-const express = require('express');
-const app = express();
-const mssql = require("mysql");
- 
-// Get request
-app.get('/', function (req, res) {
- 
-    // Config your database credential
-    const config = {
-        user: 'SA',
-        password: 'Your_Password',
-        server: 'localhost',
-        database: 'geek'
-    };
- 
-    // Connect to your database
-    mssql.connect(config, function (err) {
- 
-        // Create Request object to perform
-        // query operation
-        let request = new mssql.Request();
- 
-        // Query to the database and get the records
-        request.query('select * from student',
-            function (err, records) {
- 
-                if (err) console.log(err)
- 
-                // Send records as a response
-                // to browser
-                res.send(records);
- 
-            });
-    });
-});
- 
-let server = app.listen(5000, function () {
-    console.log('Server is listening at port 5000...');
-});
-        }
-      </script>
+    
+        <input type="submit" id="submit" name="Signup" value="Submit">
+      </form>
+    
     
 </body>
 </html>
