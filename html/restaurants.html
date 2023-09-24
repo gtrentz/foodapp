@@ -39,6 +39,7 @@
             <script src="https://use.fontawesome.com/fe459689b4.js"></script>
             <h4 id="restaurant-name"></h4>
             <img id="restaurant-image" src="">
+            <p id = "resaurant-description"></p>
         </div>
         <!-- Buttons to switch between restaurants -->
         <div class="restaurant-switch-buttons">
@@ -52,22 +53,28 @@
             {
                 name: "Pullman Bar & Diner",
                 imageSrc: "images/Pullman.png",
+                description: "whatever whatever",
+
             },
             {
                 name: "The Dandy Lion",
                 imageSrc: "images/Dandy.jpeg",
+                description: "whatever whatever",
             },
             {
                 name: "Encounter",
                 imageSrc: "images/Encounter.jpeg",
+                description: "whatever whatever",
             },
             {
                 name: "Webster",
                 imageSrc: "images/webster.jpeg",
+                description: "whatever whatever",
             },
             {
                 name: "Orchard Green",
                 imageSrc: "images/Orchard Green.jpeg",
+                description: "whatever whatever",
             },
         ];
 
@@ -77,7 +84,8 @@
         function updateRestaurant() {
             const restaurant = restaurants[currentRestaurantIndex];
             document.getElementById("restaurant-name").textContent = restaurant.name;
-            document.getElementById("restaurant-image").src = restaurant.imageSrc;
+            document.getElementById("restaurant-image").src = restaurant.imageSrc
+            document.getElementbyId("resaurant-description").textContent = restaurant.description;
         }
 
         // Initialize the first restaurant
