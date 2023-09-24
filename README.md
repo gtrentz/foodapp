@@ -1,6 +1,6 @@
-# UIOWA 23 Hackathon - Food Finder 
+# IOWA 23 Hackathon - Food Finder
 
-![Project Logo](images/logo.png)
+<img src="html/images/Logo.png" alt="Logo" width="200"/>
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -8,8 +8,6 @@
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ## Introduction
@@ -40,7 +38,7 @@ Key features:
 Outline the technologies and frameworks you used to build your application:
 
 - **Frontend**: HTML, CSS
-- **Backend**: Javascript, Flask from Python Library
+- **Backend**: Javascript, Flask from Python Library, PHP, MySQL, Batch
 - **Deployment**: Hosting on a XAMPP server
 
 ## Setup
@@ -65,17 +63,6 @@ Instructions on how to set up your project locally:
 
 Food Finder is your all-in-one solution for satisfying your cravings, whether you're dining out with friends or preparing a delicious meal at home. Say goodbye to food indecision and hello to culinary delight with Food Finder!
 
-## Contributing
-
-If you'd like to contribute to this project, please follow these guidelines:
-
-1. Fork the project on GitHub.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and test thoroughly.
-4. Create a pull request, describing your changes in detail and referencing any related issues.
-5. Ensure your code follows the project's coding style and conventions.
-
-
 ## Acknowledgments
 
 We would like to express our gratitude to the following individuals for their support and contributions to this project:
@@ -84,6 +71,6 @@ We would like to express our gratitude to the following individuals for their su
     Jakob Malasig: handled mainly the frontend using html and css
     Harry Truong: handled both the frontend and backend using html, css, and js
 
-Additionally, we would like to thank the University of Iowa and all their sponsers for hosting such an amazing and fun event.
+Additionally, we would like to thank the University of Iowa and all their sponsors for hosting such an amazing and fun event.
 
 This project wouldn't have been possible without the collective effort and collaboration of everyone mentioned above. Thank you for helping us make this project a reality!
