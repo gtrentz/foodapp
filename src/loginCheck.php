@@ -36,7 +36,7 @@ foreach ($userlines as $line) {
     file_put_contents($currentuserFile, $userInfo);
 
     // Redirect to the user's dashboard or any other page
-    header('Location: /userhome.html');
+    header('Location: http://localhost/userhome.html');
     exit; // Terminate the script
 }
 }
