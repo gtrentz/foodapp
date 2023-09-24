@@ -21,6 +21,11 @@ const recipes = [
         name: "Garlic Fried Rice",
         ingredients:["vegetable oil", "garlic", "rice", "salt", "black pepper", "scallion"],
     },
+    {
+        name:"Chicken Taco",
+        ingredients:["Chicken","Taco Seasoning","Salt","Limes","Corn Tortillas","Onion","Vegetable Oil"
+          ],
+    }
     // Add more recipes as needed
   ];
   function findMatchingRecipes(userIngredients) {
@@ -49,7 +54,7 @@ const recipes = [
   }
   
   // Example usage:
-  const userIngredients = ["hot cooked medium egg noodles", "tuna", "milk"];
+  const userIngredients = ["egg noodles", "tuna", "milk"];
   const matchingRecipes = findMatchingRecipes(userIngredients);
   console.log("Matching Recipes:", matchingRecipes);
     
