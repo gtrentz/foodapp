@@ -264,3 +264,12 @@ button:hover {
   background: #9cdcfeff;
   color: black;
 }
+.myDiv{
+  font-family:sans-serif;
+  color: black;
+  line-height: 20px;
+  text-align: left; 
+  justify-self: left;
+  padding-left: 15%;
+  padding-right: 15%;
+}
