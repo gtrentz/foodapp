@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color:rgb(253, 243, 202);">
+    <header>
+        <nav class="navbar">
+            <div class="navbarContainer">
+              <a href="index.html" id="navbarLogo"><img src='images/icon.png' height="75px">Food App</a>
+              <div class="navbarToggle" id="mobileMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+              <ul class="navbarMenu">
+                <li class="navbarItem">
+                  <a href="index.html" class="navbarLinks">Home</a>
+                </li>
+                <li class="navbarItem">
+                  <a href="restaurants.html" class="navbarLinks">Restaurants</a>
+                </li>
+                <li class="navbarItem">
+                  <a href="recipes.html" class="navbarLinks">Recipes</a>
+                </li>
+                <li class="navbarBtn">
+                  <a href="signup.html" class="button">Join</a>
+                </li>
+                <li class="navbarBtn">
+                  <a href="login.html" class="button">Login</a>
+    </header>
+    <br>
+    <section>
+        <h4>Pullman Bar & Diner</h4>
+        <img src="images/Pullman.png">
+        <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+        <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+        
+        <h4>The Dandy Lion</h4>
+        <img src="images/Dandy.jpeg">
+        <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+        <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+        
+        <!-- Add more restaurant elements similarly -->
+    </section>
+
+    <script>
+        // Get all restaurant elements
+        const restaurantElements = document.querySelectorAll('h4, img, .btn');
+
+        // Initialize index to 0 to show the first restaurant
+        let currentIndex = 0;
+
+        // Function to hide all restaurants except the one at the specified index
+        function showRestaurant(index) {
+            restaurantElements.forEach((element, i) => {
+                if (i === index * 4 || i === index * 4 + 1 || i === index * 4 + 2 || i === index * 4 + 3) {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        }
+
+        // Initial display
+        showRestaurant(currentIndex);
+
+        // Button to show the next restaurant
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Next Restaurant';
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % (restaurantElements.length / 4);
+            showRestaurant(currentIndex);
+        });
+
+        // Add the next button to the page
+        document.body.appendChild(nextButton);
+    </script>
+</body>
+</html>
