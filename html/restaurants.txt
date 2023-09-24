@@ -1,0 +1,19 @@
+Pullman Bar & Diner
+images/Pullman.png
+Refurbished diner offering traditional comfort fare with a twist, plus craft cocktails & beers
+American, Bar
+The Dandy Lion
+images/Dandy.jpeg
+Breakfast, sandwiches & salads served in a casual luncheonette featuring exposed-brick walls.
+Breakfast, Brunch, American
+"Encounter Cafe
+images/Encounter.jpeg
+Cafe with only fresh ingredients
+Breakfast, Brunch, Tea/Coffee
+The Webster
+images/webster.jpeg
+The upscale restaurant that features seasonal American dishes and a menu from owner Sam Gelman, made the list representing Iowa.Cocktail Bar, Small Plates, American
+Orchard Green
+images/Orchard Green.jpeg
+Seasonal American dishes with Mediterranean influences in a sleek, dark-wood dining room.
+American, Seafood"

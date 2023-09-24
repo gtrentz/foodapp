@@ -1,17 +1,37 @@
 {
     "group1": {
         "members": ["user1", "user2", "user3"],
+        "restaurants": ["restaurant1", "restaurant2", "restaurant3"],
         "restaurant_preferences": {
-            "restaurant1": ["dislike", "like", "like"],
-            "restaurant2": ["like", "dislike", "like"],
-            "restaurant3": ["like", "like", "dislike"]
+            "user1": {
+                "restaurant1": "like",
+                "restaurant2": "dislike",
+                "restaurant3": "like"
+            },
+            "user2": {
+                "restaurant1": "like",
+                "restaurant2": "like",
+                "restaurant3": "like"
+            },
+            "user3": {
+                "restaurant1": "dislike",
+                "restaurant2": "like",
+                "restaurant3": "dislike"
+            }
         }
     },
     "group2": {
         "members": ["user4", "user5"],
+        "restaurants": ["restaurant1", "restaurant2"],
         "restaurant_preferences": {
-            "restaurant1": ["like", "like"],
-            "restaurant2": ["like", "dislike"]
+            "user4": {
+                "restaurant1": "like",
+                "restaurant2": "like"
+            },
+            "user5": {
+                "restaurant1": "dislike",
+                "restaurant2": "like"
+            }
         }
     }
 }

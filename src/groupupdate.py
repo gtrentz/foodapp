@@ -1,62 +1,55 @@
-from flask import Flask, request, render_template
 
-app = Flask(__name__)
+import json
 
-# Sample groups data structure (you can replace this with your own)
-groups = {
+try:
+    with open('C:\\xampp\\htdocs\\groups.txt', 'r') as file:
+        groups_data = json.load(file)
+except (FileNotFoundError, json.decoder.JSONDecodeError):
+    # Handle the case when the file is not found or contains invalid JSON
+    # You can initialize an empty JSON object as shown above or take other actions.
+    groups_data = {}
+
+# Perform calculations or checks on the group data
+# Update relevant data structures as needed
+
+valid_restaurants = {}
+
+# Sample initialization of group data
+groups_data = {
     'group1': {
         'members': ['user1', 'user2', 'user3'],
         'restaurant_preferences': {
-            'restaurant1': ['like', 'like', 'like'],
-            'restaurant2': ['like', 'dislike', 'like'],
-            'restaurant3': ['like', 'like', 'dislike'],
+            'user1': {'restaurant1': 'like', 'restaurant2': 'like'},
+            'user2': {'restaurant1': 'like', 'restaurant2': 'dislike'},
+            'user3': {'restaurant1': 'like', 'restaurant2': 'like'},
         },
+        'restaurants': ['restaurant1', 'restaurant2'],  # List of available restaurants
     },
-    'group2': {
-        'members': ['user4', 'user5'],
-        'restaurant_preferences': {
-            'restaurant1': ['like', 'like'],
-            'restaurant2': ['like', 'dislike'],
-        },
-    },
+    # Add other groups as needed
 }
 
-@app.route('/')
-def index():
-    return render_template('index.html', groups=groups)
+# Initialize a dictionary to store valid restaurants for each group
+valid_restaurants = {}
 
-@app.route('/like', methods=['POST'])
-def like():
-    group_id = request.form['group_id']
-    user_id = request.form['user_id']
-    restaurant = request.form['restaurant']
+# Iterate over each group and calculate valid restaurants
+for group_name, group_data in groups_data.items():
+    members = group_data['members']
+    restaurant_preferences = group_data['restaurant_preferences']
 
-    # Update the groups data structure with the user's like
-    groups[group_id]['restaurant_preferences'][restaurant][user_id] = 'like'
+    # Initialize a dictionary to store restaurant likes
+    restaurant_likes = {restaurant: 0 for restaurant in group_data['restaurants']}
 
-    return "Liked!"
+    # Calculate restaurant likes based on user preferences
+    for user in members:
+        user_preferences = restaurant_preferences.get(user, {})
+        for restaurant, preference in user_preferences.items():
+            if preference == 'like':
+                restaurant_likes[restaurant] += 1
 
-def handle_click():
-    button_clicked = request.form['button']
-    # Perform actions based on the button clicked (e.g., run a Python script)
-    if button_clicked == 'yay':
-        # Run Python script for 'yay' action
-        # ...
-        pass
-    elif button_clicked == 'nay':
-        # Run Python script for 'nay' action
-        # ...
-        pass
-    return "Button click handled successfully"
+    # Find the restaurants liked by all users in the group
+    valid_restaurants[group_name] = [
+        restaurant for restaurant, likes in restaurant_likes.items() if likes == len(members)
+    ]
 
-def update_groups():
-    action = request.form.get('action')  # Get the user's action (yay or nay)
-    # Update the 'groups' variable based on the user's action
-    # For example, you can modify preferences in the groups data structure
-    # based on the user's action and group ID.
-    # Ensure proper error handling and validation.
-    # You can return a response indicating success or failure.
-    return "Groups updated successfully"
-
-if __name__ == '__main__':
-    app.run(debug=True)
+# valid_restaurants now contains a dictionary of valid restaurants for each group
+print(valid_restaurants)
