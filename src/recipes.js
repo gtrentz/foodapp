@@ -12,7 +12,7 @@ const recipes = [
         ingredients: ["chicken thigh", "garlic","soy sauce", "white vinegar", "bay leaves", "2 tbsp oil", "onions", "brown sugar", "black pepper", "green onions"],
           
     }
-    {
+    ,{
         name:"Tomato Soup",
         ingredients: ["Butter", "Yellow onion","Garlic", "Crushed tomatoes", "Chicken stock","Basil","Sugar","black pepper","Heavy Cream","Parmesan cheese"],
           
