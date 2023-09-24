@@ -35,35 +35,27 @@
               <a href="groups.html" class="navbarLinks">Groups</a>
             </li>
             <li class="navbarBtn">
-              <a href="signup.html" class="button">Join</a>
-            </li>
-            <li class="navbarBtn">
-              <a href="login.html" class="button">Login</a>
+              <a href="user.html" class="button">User</a>
             </li>
           </ul>
         </div>
       </nav>
   </header>
 
-  <!-- Login Form -->
-  <body class="loginBody">
-    <form method="POST" action="http://localhost/loginCheck.php." style="border: 1px solid #ccc"> 
-      <div class="formContainer">
-        <h1>Welcome Back!</h1>
-        <p>Sign in to Food App or <a href="signup.html">Create an Account</a></p>
+     <!-- Main Section-->
+     <div class="main">
+      <div class="mainContainer">
+        <div class="mainContent">
+          <h1>Finding food has never been easier</h1>
+          <p>Say goodbye to the hassle of deciding where or what to eat and say hello to a fun way to find food.</p>
+          <button class="mainBtn"><a href="restaurants.html">Find Restaurants</a></button>
+          <button class="mainBtn"><a href="recipes.html">Find Recipes</a></button>
+        </div>
+        <div class="mainImgContainer">
+          <img src="images/homepage.svg" alt="pizza party" id="mainImg">
+        </div>
+      </div>
+    </div>
 
-        <hr>
-
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br> <!-- Changed 'name' attribute to 
-        
-        'username' -->
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br> <!-- Changed 'type' to 'password' -->
-       
-        <br>
-        <input type="submit" id="submit" name="Submit" value="Submit">
-        <p><a href="signup.html">Don't have an account? Sign Up!</a>
-    </form>
   </body>
 </html>
