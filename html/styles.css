@@ -29,8 +29,8 @@
 }
 
 #navbarLogo {
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb1 100%);
+  background-color: #9cdcfeff;
+  background-image: linear-gradient(to top, #9cdcfeff 0%, #ffb1 100%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -87,6 +87,16 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  background: #f77062;
-  color: white;
+  background: #9cdcfeff;
+  color: black;
+}
+
+.button:hover {
+  background: #cd9278ff;
+  transition: all 0.3s ease;
+}
+
+.navbarLinks:hover {
+  color: #cd9278ff;
+  transition: all 0.3s ease;
 }
