@@ -281,43 +281,23 @@ button:hover {
   border-radius: 10%;
 }
 
-/* Recipes css */
-.button2 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 3px 8  px;
-  height: 25 px;
-  width: 15%;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  background: red;
-  color: black;
-  float: left;
-  margin: auto;
-}
-
-.button3 {
+.useBtn {
   position:relative;
-  display: flex;
+  display: inline;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: 3px 8  px;
+  padding: 3px 8px;
   height: 25 px;
   width: 15%;
-  border: none;
-  outline: none;
   border-radius: 5px;
-  background: red;
-  color: black;
-  float: right;
+  background: black;
   margin: auto;
+  left: 500px
+  
 }
 
+/* Recipes css */
 .myDiv{
   color: black;
   line-height: 20px;

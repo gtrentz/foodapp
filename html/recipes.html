@@ -39,8 +39,6 @@
         </div>
       </nav>
     </header>
-
-    <hr>
   
     <div class = "myDiv">
         <h3>Name: Tuna Noodle Casserole</h3>
@@ -114,17 +112,16 @@
             8. Coat chicken in glaze then serve over rice. <br>
         </p>
     </div>
-    <!-- Add more recipe containers as needed -->
-   <!-- <div style="position:relative; left:650px;"> -->
-        <button id="prev-recipe" class = "button2">Previous</button>
-        <button id="next-recipe" class = "button3">Next</button>
-    <!--</div> -->
+    <div>
+      <button id="next-recipe" class="useBtn">Next</button>
+      <button id="prev-recipe" class="useBtn">Previous</button>
+    </div>
 
     <script>
         const recipeContainers = document.querySelectorAll(".myDiv");
         let currentRecipeIndex = 0;
 
-        // Function to show the currently selected recipe and hide others
+        /* Function to show the currently selected recipe and hide others */
         function showRecipe(index) {
             recipeContainers.forEach((container, i) => {
                 if (i === index) {
@@ -135,16 +132,16 @@
             });
         }
 
-        // Initialize with the first recipe shown
+        /* Initialize with the first recipe shown */
         showRecipe(currentRecipeIndex);
 
-        // Event listener for the "Next" button
+        /* Event listener for the "Next" button */
         document.getElementById("next-recipe").addEventListener("click", () => {
             currentRecipeIndex = (currentRecipeIndex + 1) % recipeContainers.length;
             showRecipe(currentRecipeIndex);
         });
 
-        // Event listener for the "Previous" button
+        /* Event listener for the "Previous" button */
         document.getElementById("prev-recipe").addEventListener("click", () => {
             currentRecipeIndex = (currentRecipeIndex - 1 + recipeContainers.length) % recipeContainers.length;
             showRecipe(currentRecipeIndex);
