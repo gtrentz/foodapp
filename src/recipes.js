@@ -16,7 +16,11 @@ const recipes = [
         name:"Tomato Soup",
         ingredients: ["Butter", "Yellow onion","Garlic", "Crushed tomatoes", "Chicken stock","Basil","Sugar","black pepper","Heavy Cream","Parmesan cheese"],
           
-    }
+    },
+    {
+        name: "Garlic Fried Rice",
+        ingredients:["vegetable oil", "garlic", "rice", "salt", "black pepper", "scallion"],
+    },
     // Add more recipes as needed
   ];
   function findMatchingRecipes(userIngredients) {
