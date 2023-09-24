@@ -49,6 +49,24 @@
       <ul id="group-list">
           <!-- Group data will be inserted here -->
       </ul>
+      <h2 id="create">Create New</h2>
+      <form method="POST" action="http://localhost/create.php">
+        <!-- Input fields for group data -->
+        <label for="group_name">Group Name:</label>
+        <input type="text" id="group_name" name="group_name"><br>
+    
+        <label for="members">Members:</label>
+        <input type="text" id="members" name="members"><br>
+    
+        <!-- Input fields for restaurant preferences -->
+        <label for="restaurant1">Restaurant 1:</label>
+        <input type="text" id="restaurant1" name="restaurant1"><br>
+    
+        <!-- Add input fields for other restaurants as needed -->
+    
+        <input type="submit" value="Create Group">
+    </form>
+    
   </section>
   <script>
       // Fetch data from the Python script on XAMPP
