@@ -31,53 +31,68 @@
                 </li>
                 <li class="navbarBtn">
                   <a href="login.html" class="button">Login</a>
-    </header>
-    <br>
+                </header>
     <section>
-        <h4>Pullman Bar & Diner</h4>
-        <img src="images/Pullman.png">
-        <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-        <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        
-        <h4>The Dandy Lion</h4>
-        <img src="images/Dandy.jpeg">
-        <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-        <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        
-        <!-- Add more restaurant elements similarly -->
+        <!-- Restaurant container -->
+        <div class="restaurant-container">
+            <script src="resturants.js" class="center"></script>
+            <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+            <h4 id="restaurant-name"></h4>
+            <img id="restaurant-image" src="">
+        </div>
+        <!-- Buttons to switch between restaurants -->
+        <div class="restaurant-switch-buttons">
+            <button id="yay">yay</button>
+            <button id="nay">nay</button>
+        </div>
     </section>
-
     <script>
-        // Get all restaurant elements
-        const restaurantElements = document.querySelectorAll('h4, img, .btn');
+        // Sample restaurant data
+        const restaurants = [
+            {
+                name: "Pullman Bar & Diner",
+                imageSrc: "images/Pullman.png",
+            },
+            {
+                name: "The Dandy Lion",
+                imageSrc: "images/Dandy.jpeg",
+            },
+            {
+                name: "Encounter",
+                imageSrc: "images/Encounter.jpeg",
+            },
+            {
+                name: "Webster",
+                imageSrc: "images/webster.jpeg",
+            },
+            {
+                name: "Orchard Green",
+                imageSrc: "images/Orchard Green.jpeg",
+            },
+        ];
 
-        // Initialize index to 0 to show the first restaurant
-        let currentIndex = 0;
+        let currentRestaurantIndex = 0;
 
-        // Function to hide all restaurants except the one at the specified index
-        function showRestaurant(index) {
-            restaurantElements.forEach((element, i) => {
-                if (i === index * 4 || i === index * 4 + 1 || i === index * 4 + 2 || i === index * 4 + 3) {
-                    element.style.display = 'block';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
+        // Function to update the displayed restaurant
+        function updateRestaurant() {
+            const restaurant = restaurants[currentRestaurantIndex];
+            document.getElementById("restaurant-name").textContent = restaurant.name;
+            document.getElementById("restaurant-image").src = restaurant.imageSrc;
         }
 
-        // Initial display
-        showRestaurant(currentIndex);
+        // Initialize the first restaurant
+        updateRestaurant();
 
-        // Button to show the next restaurant
-        const nextButton = document.createElement('button');
-        nextButton.textContent = 'Next Restaurant';
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % (restaurantElements.length / 4);
-            showRestaurant(currentIndex);
+        // Event listeners for next and previous buttons
+        document.getElementById("nay").addEventListener("click", () => {
+            currentRestaurantIndex = (currentRestaurantIndex + 1) % restaurants.length;
+            updateRestaurant();
         });
 
-        // Add the next button to the page
-        document.body.appendChild(nextButton);
+        document.getElementById("yay").addEventListener("click", () => {
+            currentRestaurantIndex = (currentRestaurantIndex - 1 + restaurants.length) % restaurants.length;
+            updateRestaurant();
+        });
     </script>
 </body>
 </html>
