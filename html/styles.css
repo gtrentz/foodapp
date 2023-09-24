@@ -321,5 +321,12 @@ button:hover {
 
 /* Groups Section */
 .groupContainer {
-  
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px black;
+  margin: auto;
 }
