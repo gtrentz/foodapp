@@ -274,3 +274,13 @@ margin: auto;
   background: #9cdcfeff;
   color: black;
 }
+
+.restaurant-container {
+  text-align: center;
+}
+
+#restaurant-image {
+  height: 80%;
+  width: 80%;
+  border: 50%;
+}
