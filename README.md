@@ -1,6 +1,6 @@
-# UIOWA 23 Hackathon - Food Finder 
+# UIOWA 23 Hackathon - Food Finder #
 
-![Project Logo](logo.png)
+![Project Logo](images/logo.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -9,7 +9,6 @@
 - [Setup](#setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ## Introduction
@@ -40,7 +39,7 @@ Key features:
 Outline the technologies and frameworks you used to build your application:
 
 - **Frontend**: HTML, CSS
-- **Backend**: Javascript, Flask from Python Library
+- **Backend**: Javascript, Flask from Python Library, PHP, MySQL, Batch
 - **Deployment**: Hosting on a XAMPP server
 
 ## Setup
@@ -84,6 +83,6 @@ We would like to express our gratitude to the following individuals for their su
     Jakob Malasig: handled mainly the frontend using html and css
     Harry Truong: handled both the frontend and backend using html, css, and js
 
-Additionally, we would like to thank the University of Iowa and all their sponsers for hosting such an amazing and fun event.
+Additionally, we would like to thank the University of Iowa and all their sponsors for hosting such an amazing and fun event.
 
 This project wouldn't have been possible without the collective effort and collaboration of everyone mentioned above. Thank you for helping us make this project a reality!
