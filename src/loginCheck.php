@@ -15,29 +15,30 @@ foreach ($userlines as $line) {
         // Use password_verify to check if the entered password matches the stored hash
         if (password_verify($password, $storedHashedPassword)) {
             $valid = true;
-            echo "Login successful";
-            echo "<a href='http://127.0.0.1:5500/html/userhome.html'>Home page</a>";
+            //echo "Login successful";
+            //echo "<a href='http://127.0.0.1:5500/html/userhome.html'>Home page</a>";
             } else {
             // Invalid login, display an error message or redirect to a login error page
                 echo "Invalid username or password. <a href='http://127.0.0.1:5500/html/login.html'>Try again</a>";
         }
     }
 
-    // if ($valid) {
-    //     $username = $_POST['username']; // Assuming you have already validated the login
-    //         // Create or update currentuser.txt
-    //         $currentuserFile = 'currentuser.txt';
+    if ($valid) {
+    $username = $_POST['username'];
 
-    //         // User information to write (e.g., username)
-    //         $userInfo = "Username: $username\n";
+    // Create or update currentuser.txt
+    $currentuserFile = 'currentuser.txt';
 
-    //         // Write the user information to currentuser.txt
-    //         file_put_contents($currentuserFile, $userInfo);
+    // User information to write (e.g., username)
+    $userInfo = "Username: $username\n";
 
-    //         // Redirect to the user's dashboard or any other page
-    //         header('Location: C:\xampp\htdocs\userhome.html');
-    //         exit; // Terminate the script
-    // }
+    // Write the user information to currentuser.txt
+    file_put_contents($currentuserFile, $userInfo);
+
+    // Redirect to the user's dashboard or any other page
+    header('Location: /userhome.html');
+    exit; // Terminate the script
+}
 }
 
 
