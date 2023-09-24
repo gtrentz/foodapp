@@ -4,32 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <style>
     .myDiv {
       border: 2px outset black;
-      background-color: rgb(216, 225, 228);
+      background-color: white;
     
     }
     </style>
 <body style="background-color:rgb(253, 243, 202);">
     <header>
-        <nav>
-            <u1>
-                <a href = "index.html">
-                <img src = "images/home button.png" style = "max-width: 5%;">
-            </a>
-                <div style = "position:relative; left:1300px;">
-                    <a href="signup.html">
-                    <button id = "Signup"> Sign Up </button>
-                    </a>
-                    <a href="login.html">
-                    <button id = "Login"> Login </button>
-                    </a>
-            </u1>
-        </nav>
-    </header>
+        <nav class="navbar">
+            <div class="navbarContainer">
+              <a href="index.html" id="navbarLogo">Food App</a>
+              <div class="navbarToggle" id="mobileMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+              <ul class="navbarMenu">
+                <li class="navbarItem">
+                  <a href="index.html" class="navbarLinks">Home</a>
+                </li>
+                <li class="navbarItem">
+                  <a href="restaurants.html" class="navbarLinks">Restaurants</a>
+                </li>
+                <li class="navbarItem">
+                  <a href="recipes.html" class="navbarLinks">Recipes</a>
+                </li>
+                <li class="navbarBtn">
+                  <a href="signup.html" class="button">Sign Up</a>
+                </li>
+                <li class="navbarBtn">
+                  <a href="login.html" class="button">Login</a>
+                </header>
     <hr>
     <div style = "position:relative; left:650px;">
         <button id = "Recipes"> Recipes </button> <a href = "restaurants.html"><button id = "Restaurants"> Restaurants </button> </a>
