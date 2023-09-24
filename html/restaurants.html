@@ -101,5 +101,38 @@
             updateRestaurant();
         });
     </script>
+
+    <script>
+document.getElementById("nay").addEventListener("click", () => {
+    // Send a POST request to the Flask route with the user's action
+    sendUserAction('nay');
+});
+
+document.getElementById("yay").addEventListener("click", () => {
+    // Send a POST request to the Flask route with the user's action
+    sendUserAction('yay');
+});
+
+function sendUserAction(action) {
+    fetch('/update_groups', {
+        method: 'POST',
+        body: new URLSearchParams({ action }),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle a successful response if needed
+            // You can update the client-side UI here if required
+        } else {
+            // Handle errors if needed
+        }
+    })
+    .catch(error => {
+        // Handle network errors if needed
+    });
+}
+    </script>
 </body>
 </html>
