@@ -17,6 +17,7 @@ foreach ($userlines as $line) {
 if ($validLogin) {
     // Successful login, redirect to a welcome page or perform necessary actions
     echo "Login successful";
+    echo "<a href='http://127.0.0.1:5500/html/index.html'>Home page</a>";
     //exit();
 } else {
     // Invalid login, display an error message or redirect to a login error page
