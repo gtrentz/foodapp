@@ -38,8 +38,8 @@ Key features:
 Outline the technologies and frameworks you used to build your application:
 
 - **Frontend**: HTML, CSS
-- **Backend**: Javascript, Flask from Python Library, PHP, MySQL, Batch
-- **Deployment**: Hosting on a XAMPP server
+- **Backend**: Javascript, Flask (Python Library), PHP, MySQL, Batch
+- **Deployment**: Hosting on an Apache (XAMPP) server
 
 ## Setup
 
