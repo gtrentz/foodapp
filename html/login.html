@@ -66,57 +66,5 @@
     
         <p><a href="/">Forgot Password?</a>
     </form>
-  <script>
-    /* Simulated user data */
-    const fs = require('fs');
-
-    const filePath = 'src/currentusers.txt';
-
-    const usernames = [];
-
-    /* Read the text file */
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-            console.error('Error reading the file:', err);
-            return;
-        }
-
-        const lines = data.split('\n');
-
-        for (const line of lines) {
-            /* Check if the line starts with "Username: " */
-            if (line.startsWith('Username: ')) {
-                const username = line.replace('Username: ', '').trim();
-                usernames.push(username);
-            }
-        }
-
-        /* Display the extracted usernames */
-        console.log('Extracted usernames:', usernames);
-    });
-
-
-    const loginForm = document.getElementById("login-form");
-
-    loginForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        
-        const usernameInput = document.getElementById("username");
-        
-        const enteredUsername = usernameInput.value;
-        
-        /* Check if the entered credentials match any user in the user array */
-        const user = users.find(u => u.username === enteredUsername);
-        
-        if (user) {
-            /* Redirect to userhome.html on successful login */
-            window.location.href = "home.html";
-        } else {
-            alert("Invalid username or password. Please try again.");
-            /* Clear the input fields */
-            passwordInput.value = "";
-        }
-    });
-  </script>
   </body>
 </html>
